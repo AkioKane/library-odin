@@ -13,23 +13,24 @@
         <div class="menu-container">
             <form class="add-new-book">
                 <h2>Add New Book</h2>
-                <input type="text" placeholder="Title" class="title">
-                <input type="text" placeholder="Author" class="author">
-                <input type="text" placeholder="Pages" class="pages">
+                <input type="text" placeholder="Title" class="title" maxlength="100" required>
+                <input type="text" placeholder="Author" class="author" maxlength="100" required>
+                <input type="text" placeholder="Pages" class="pages" max="10000" required>
                 <div class="is-read">
                     <label for="is-read">Have you read it?</label>
                     <input type="checkbox" class="checkbox">
                 </div>
-                <button class="sumbit">Sumbit</button>
+                <button class="sumbit" type="submit">Sumbit</button>
             </form>
         </div>
     </div>
 
     <div class="main">
         <div class="header">
-            <h1>Library</h1>
+            <h1>library</h1>
             <button class="add-book">
                 <img src="./src/assets/add.svg" alt="Add">
+                <h2>Add book</h2>
             </button>
         </div>
         <div class="container">
