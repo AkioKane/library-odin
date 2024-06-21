@@ -3,6 +3,7 @@ const myLibrary = [{'head': 'Hello', 'name': 'World', 'pages': 52}, {'head': 'He
 const btn = document.querySelector(".add-book")
 const menu = document.querySelector(".menu")
 const menuContainer = document.querySelector(".menu-container")
+const overlay = document.querySelector(".overlay")
 const btnSumbit = document.querySelector(".sumbit")
 const cards = document.querySelector(".cards")
 
@@ -43,12 +44,15 @@ function addBookToLibrary() {
 }
 
 btn.addEventListener('click', function () {
+    overlay.style.display = 'flex';
     menu.style.display = 'flex';
+    document.body.appendChild(overlay);
     document.body.appendChild(menu);
 })
 
 menu.addEventListener('click', function (event) {
     if (!menuContainer.contains(event.target)) {
         document.body.removeChild(menu);
+        document.body.removeChild(overlay);
     }
 })
