@@ -1,4 +1,4 @@
-const myLibrary = [{'head': 'Hello', 'name': 'World', 'pages': 52}, {'head': 'Help', 'name': 'Me', 'pages': 25}]
+const myLibrary = []
 
 const btn = document.querySelector(".add-book")
 const menu = document.querySelector(".menu")
@@ -14,11 +14,11 @@ function Book() {
         newCard.classList.add("card")
 
         let head = document.createElement("h3")
-        head.textContent = `"${i['head']}"`
+        head.textContent = `"${i['title']}"`
         newCard.appendChild(head)
 
         let name = document.createElement("h3")
-        name.textContent = i['name']
+        name.textContent = i['author']
         newCard.appendChild(name)
 
         let pages = document.createElement("h3")
@@ -37,10 +37,31 @@ function Book() {
         cards.appendChild(newCard)
     }
 }
-Book()
 
 function addBookToLibrary() {
-    // do stuff here
+    let title = document.querySelector(".title").value
+    let author = document.querySelector(".author").value
+    let pages = document.querySelector(".pages").value
+
+    // let book = {
+    //     'name': title,
+    //     'author': author,
+    //     'pages': pages,
+    // }
+
+    let book = new BookItem(title, author, pages)
+    
+    myLibrary.push(book)
+    console.log(myLibrary)
+    console.log(book)
+
+    Book()
+}
+
+function BookItem(title, author, pages) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
 }
 
 btn.addEventListener('click', function () {
@@ -55,4 +76,11 @@ menu.addEventListener('click', function (event) {
         document.body.removeChild(menu);
         document.body.removeChild(overlay);
     }
+})
+
+btnSumbit.addEventListener('click', function () {
+    addBookToLibrary()
+
+    document.body.removeChild(menu);
+    document.body.removeChild(overlay);
 })
