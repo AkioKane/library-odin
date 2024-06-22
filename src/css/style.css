@@ -90,11 +90,12 @@ body {
         border-radius: 5px;
         outline: none;
         font-size: 15px;
+        width: 70%;
     }
     .sumbit {
         padding: 1em;
-        width: 65%;
         border-radius: 6px;
+        width: 80%;
         border: none;
         background-color: rgb(58, 221, 37);
         transition: background-color 0.05s ease;

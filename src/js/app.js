@@ -1,6 +1,7 @@
 const myLibrary = []
 
 const btn = document.querySelector(".add-book")
+const btnRead = document.querySelector(".read-btn")
 const menu = document.querySelector(".menu")
 const menuContainer = document.querySelector(".menu-container")
 const overlay = document.querySelector(".overlay")
@@ -26,6 +27,7 @@ function Book() {
         newCard.appendChild(pages)
 
         let btnRead = document.createElement("button")
+        btnRead.classList.add("read-btn")
         btnRead.textContent = "Read"
         newCard.appendChild(btnRead)
 
@@ -83,4 +85,8 @@ btnSumbit.addEventListener('click', function () {
 
     document.body.removeChild(menu);
     document.body.removeChild(overlay);
+})
+
+btnRead.addEventListener('click', function () {
+    btnRead.style.backgroundColor = 'red';
 })
